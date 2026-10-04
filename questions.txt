@@ -1,0 +1,4 @@
+(1) One instance used approximately 402,776,064 bytes of unique physical memory (USS).
+(2) When five instances are running, each process was using about 402,759,680 bytes of USS memory. The memory usage was almost the same for all five processes. This shows that each normal process was still using its own separate copy of the image data.
+(3) With five normal processes, each one used about 393,320 KB of USS. With mmap, the USS dropped to about 196,712 KB. The RSS was still around the same, but mmap was using less unique memory because the processes were sharing the same input image pages instead of each keeping its own copy.
+(4) The program had 1 major page fault and 1932 minor page faults. A minor page fault happens when the page is not currently mapped for the process but the OS can get it without reading it from disk. A major page fault happens when the page has to be loaded from storage, so it is slower.
